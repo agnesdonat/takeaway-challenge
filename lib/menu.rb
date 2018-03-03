@@ -1,5 +1,11 @@
 class Menu
 
+  attr_reader :menu
+
+  def initialize
+    @dishes = show_menu
+  end
+
   def show_menu
     menu = [
       { "Garlic bread" => "£2.99" },
