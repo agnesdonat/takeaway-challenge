@@ -1,13 +1,13 @@
 class Menu
 
-  attr_reader :menu
+  attr_accessor :dishes
 
   def initialize
-    @dishes = show_menu
+    @dishes = dishes
   end
 
-  def show_menu
-    menu = [
+  def dishes
+    dishes = [
       { "Garlic bread" => "£2.99" },
       { "Olives" =>  "£3.99" },
       { "Carbonara" => "£8.99" },

@@ -5,8 +5,9 @@ describe Order do
   describe '#add()' do
 
     it 'adds a dish to the order from the menu' do
-    dish = ""
-    expect(subject.add(dish)).to eq [dish]
+    order = []
+    food = ""
+    expect(subject.add(food)).to eq order
     end
 
   end
