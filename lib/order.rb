@@ -1,11 +1,12 @@
 require_relative 'menu'
 
 class Order
-  attr_accessor :order, :menu
+  attr_accessor :order, :menu, :order_total
 
   def initialize
     @menu = Menu.new
     @order = []
+    @order_total = order_total
   end
 
   def add(food)
@@ -14,13 +15,13 @@ class Order
   end
 
   def add_prices
-    order_total = 0
+    @order_total = 0
     order.each do |i|
       i.each do |dish, price|
-        order_total += price.to_f
+        @order_total += price.to_f
       end
     end
-    order_total
+    @order_total
   end
 
 end
