@@ -1,5 +1,6 @@
 require_relative 'order'
 
+
 class Total
 
   attr_accessor :new_order
@@ -17,7 +18,12 @@ class Total
    total = Total.new
    total.new_order
    sum = total.new_order.add_prices
-   raise "Please enter the correct amount" if @user_input != sum.to_f
+   raise "Please enter the correct amount" if @user_input < sum.to_f
+   send_text("Thank you for your order: £#{@order_total}")
+ end
+
+ def send_text(confirmation)
+   require_relative 'send_text'
  end
 
 end
